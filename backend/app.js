@@ -18,7 +18,9 @@ const port = process.env.PORT || 8000;
 app.use(cors({
     // Frontend URL
     origin: 'https://kanbanx-frontend.onrender.com', // Frontend URL
-    credentials: true,              // Allow credentials
+    credentials: true, // Allow credentials
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(cookieParser());
